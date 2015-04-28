@@ -64,4 +64,12 @@ describe(Tamagotchi) do
       expect(my_pet.food_level()).to(eq(5))
     end
   end
+
+  describe('#status') do
+    it('will return a status string that contains "hungry" when below a threshhold') do
+      my_pet = Tamagotchi.new("Lil Gem")
+      my_pet.set_food_level(2)
+      expect(my_pet.status()).to(include("hungry"))
+    end
+  end
 end

@@ -55,4 +55,9 @@ class Tamagotchi
     @activity_level += 1.5
     @food_level -= 2.5
   end
+
+  define_method(:status) do
+    ""
+  end
+
 end
