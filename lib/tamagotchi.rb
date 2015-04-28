@@ -52,6 +52,7 @@ class Tamagotchi
   end
 
   define_method(:play) do
-
+    @activity_level += 1.5
+    @food_level -= 2.5
   end
 end
