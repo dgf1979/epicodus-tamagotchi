@@ -33,6 +33,10 @@ class Tamagotchi
   end
 
   define_method(:is_alive?) do
-    
+    if @food_level > 0
+      return true
+    else
+      return false
+    end
   end
 end
