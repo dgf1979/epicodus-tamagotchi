@@ -47,6 +47,7 @@ class Tamagotchi
   end
 
   define_method(:sleep) do
-
+    @sleep_level += 4
+    @food_level -= 2
   end
 end
