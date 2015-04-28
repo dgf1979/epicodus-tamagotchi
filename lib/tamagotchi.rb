@@ -26,4 +26,8 @@ class Tamagotchi
   define_method(:activity_level) do
     @activity_level
   end
+
+  define_method(:time_passes) do
+
+  end
 end
