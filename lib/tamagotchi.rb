@@ -3,6 +3,7 @@ class Tamagotchi
   @food_level
   @sleep_level
   @activity_level
+  @@pet = []
 
   define_method(:initialize) do |name|
     @name = name
@@ -10,6 +11,22 @@ class Tamagotchi
     @sleep_level = 10
     @activity_level = 10
     @birthday = Time.new()
+  end
+
+  define_singleton_method(:length) do
+    @@pet.length
+  end
+
+  define_singleton_method(:all) do
+    @@pet[0]
+  end
+
+  define_singleton_method(:clear) do
+    @@pet = []
+  end
+
+  define_method(:new_pet) do
+    @@pet.push(self)
   end
 
   define_method(:name) do
@@ -29,9 +46,11 @@ class Tamagotchi
   end
 
   define_method(:time_passes) do
-    @food_level -= 1
-    @sleep_level -= 1
-    @activity_level -= 2
+    if is_alive?()
+      @food_level -= 1
+      @sleep_level -= 1
+      @activity_level -= 2
+    end
   end
 
   define_method(:set_food_level) do |new_food_level|
@@ -47,17 +66,21 @@ class Tamagotchi
   end
 
   define_method(:feed_it) do
-    @food_level += 1
+    @food_level += 3
   end
 
   define_method(:sleep) do
     @sleep_level += 4
-    @food_level -= 2
+    if is_alive?()
+      @food_level -= 2
+    end
   end
 
   define_method(:play) do
-    @activity_level += 1.5
-    @food_level -= 2.5
+    @activity_level += 5
+    if is_alive?()
+      @food_level -= 2.5
+    end
   end
 
   define_method(:status) do

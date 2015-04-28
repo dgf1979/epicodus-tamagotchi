@@ -1,0 +1,20 @@
+
+<p><%= @status %></p>
+
+<p>Food Level: <%= @food_level %></p>
+<p>Sleep Level: <%= @sleep_level %></p>
+<p>Activity Level: <%= @activity_level %></p>
+
+<form action="/" method="get">
+  <label for="action">Select an activity to do with your pet</label>
+  <select id="action" name="action">
+    <option value="status">Status Check</option>
+    <option value="nofood">No Food</option>
+    <option value="nosleep">No Sleep</option>
+    <option value="sleep">Sleep</option>
+    <option value="feed">Feed</option>
+    <option value="play">Play</option>
+    <option value="newpet">Find a new pet</option>
+  </select>
+  <button type="submit">Do</button>
+</form>
