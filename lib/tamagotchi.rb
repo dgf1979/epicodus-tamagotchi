@@ -39,7 +39,7 @@ class Tamagotchi
   end
 
   define_method(:set_sleep_level) do |new_sleep_level|
-
+    @sleep_level = new_sleep_level
   end
 
   define_method(:is_alive?) do
@@ -61,9 +61,20 @@ class Tamagotchi
   end
 
   define_method(:status) do
-    status_codes = {1 => "hungry"}
+    statuses = []
+
     if food_level < 3
-      @name + "is" + status_codes.fetch(1)
+      statuses.push("hungry")
+    end
+
+    if sleep_level < 3
+      statuses.push("sleepy")
+    end
+
+    if statuses.length > 0
+      return @name + " is " + statuses.join(" and ")
+    else
+      return ""
     end
   end
 
