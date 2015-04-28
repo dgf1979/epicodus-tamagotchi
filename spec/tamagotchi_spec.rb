@@ -25,11 +25,21 @@ describe(Tamagotchi) do
       my_pet = Tamagotchi.new("Lil Gem")
       expect(my_pet.is_alive?()).to(eq(true))
     end
-  end
 
-  it("is dead if the food level is 0") do
+    it("is dead if the food level is 0") do
       my_pet = Tamagotchi.new("Lil Gem")
       my_pet.set_food_level(0) #make a method that will change the food level of your tamagotchi.
       expect(my_pet.is_alive?()).to(eq(false))
     end
+  end
+
+  describe('#feed_it') do
+    it('will increase the food level when the user feeds the pet') do
+      my_pet = Tamagotchi.new("Lil Gem")
+      my_pet.time_passes()
+      my_pet.time_passes()
+      my_pet.feed_it()
+      expect(my_pet.food_level()).to(eq(9))
+    end
+  end
 end

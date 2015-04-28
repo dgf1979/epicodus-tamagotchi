@@ -33,14 +33,14 @@ class Tamagotchi
   end
 
   define_method(:set_food_level) do |new_food_level|
-
+    @food_level = new_food_level
   end
 
   define_method(:is_alive?) do
-    if @food_level > 0
-      return true
-    else
-      #return false
-    end
+    @food_level > 0
+  end
+
+  define_method(:feed_it) do
+
   end
 end
