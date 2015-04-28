@@ -41,6 +41,6 @@ class Tamagotchi
   end
 
   define_method(:feed_it) do
-
+    @food_level += 1
   end
 end
