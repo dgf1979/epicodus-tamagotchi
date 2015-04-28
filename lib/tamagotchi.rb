@@ -57,7 +57,10 @@ class Tamagotchi
   end
 
   define_method(:status) do
-    ""
+    status_codes = {1 => "hungry"}
+    if food_level < 3
+      @name + "is" + status_codes.fetch(1)
+    end
   end
 
 end
