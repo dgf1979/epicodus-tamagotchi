@@ -9,6 +9,7 @@ class Tamagotchi
     @food_level = 10
     @sleep_level = 10
     @activity_level = 10
+    @birthday = Time.new()
   end
 
   define_method(:name) do
@@ -28,6 +29,10 @@ class Tamagotchi
   end
 
   define_method(:time_passes) do
+    @food_level -= 1
+  end
 
+  define_method(:is_alive?) do
+    
   end
 end
