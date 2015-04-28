@@ -71,5 +71,10 @@ describe(Tamagotchi) do
       my_pet.set_food_level(2)
       expect(my_pet.status()).to(include("hungry"))
     end
+    it('will return a status string that contains "sleepy" when below a threshhold') do
+      my_pet = Tamagotchi.new("Lil Gem")
+      my_pet.set_sleep_level(2)
+      expect(my_pet.status()).to(include("sleepy"))
+    end
   end
 end

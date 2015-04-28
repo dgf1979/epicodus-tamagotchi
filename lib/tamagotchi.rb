@@ -38,6 +38,10 @@ class Tamagotchi
     @food_level = new_food_level
   end
 
+  define_method(:set_sleep_level) do |new_sleep_level|
+
+  end
+
   define_method(:is_alive?) do
     @food_level > 0
   end
