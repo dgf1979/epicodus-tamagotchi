@@ -76,5 +76,13 @@ describe(Tamagotchi) do
       my_pet.set_sleep_level(2)
       expect(my_pet.status()).to(include("sleepy"))
     end
+    it('will return a status string that contains "hyper" when above a threshhold') do
+      my_pet = Tamagotchi.new("Lil Gem")
+      my_pet.play()
+      my_pet.play()
+      my_pet.play()
+      expect(my_pet.status()).to(include("hyper"))
+    end
+
   end
 end
