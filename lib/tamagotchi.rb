@@ -45,4 +45,8 @@ class Tamagotchi
   define_method(:feed_it) do
     @food_level += 1
   end
+
+  define_method(:sleep) do
+
+  end
 end

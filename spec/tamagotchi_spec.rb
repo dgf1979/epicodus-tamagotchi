@@ -44,4 +44,14 @@ describe(Tamagotchi) do
       expect(my_pet.food_level()).to(eq(9))
     end
   end
+
+  describe('#sleep') do
+    it('will increase the sleep level, and decrease the food level') do
+      my_pet = Tamagotchi.new("Lil Gem")
+      my_pet.sleep()
+      my_pet.sleep()
+      expect(my_pet.sleep_level()).to(eq(18))
+      expect(my_pet.food_level()).to(eq(6))
+    end
+  end
 end
