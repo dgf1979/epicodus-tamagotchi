@@ -71,10 +71,14 @@ class Tamagotchi
       statuses.push("sleepy")
     end
 
+    if activity_level > 12
+      statuses.push("hyper")
+    end
+
     if statuses.length > 0
       return @name + " is " + statuses.join(" and ")
     else
-      return ""
+      return @name + " is fine."
     end
   end
 
