@@ -50,4 +50,8 @@ class Tamagotchi
     @sleep_level += 4
     @food_level -= 2
   end
+
+  define_method(:play) do
+
+  end
 end
